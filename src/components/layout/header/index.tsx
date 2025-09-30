@@ -17,6 +17,7 @@ export const Header: React.FC<Props> = ({className}) => {
     <header className={cn(style.header, className)}>
       <h1 className={style.logo}>
         <Link
+          title={'На главную'}
           className={style.logoLink}
           to={mainPageRoute}
         >Pictogram</Link>

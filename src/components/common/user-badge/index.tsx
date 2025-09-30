@@ -13,6 +13,7 @@ export const UserBadge: React.FC<Props> = ({className}) => {
 
   return (
     <Link
+      title={'перейти в профиль'}
       className={cn(style.userBadge, className)}
       to={userPageRoute(1)}
     >
