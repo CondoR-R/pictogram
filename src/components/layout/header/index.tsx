@@ -3,7 +3,8 @@ import cn from 'classnames'
 
 import style from './header.module.scss';
 import {Link} from "react-router";
-import {Navbar} from "../../common/navbar";
+import {UserBadge} from "../../common/user-badge";
+import {mainPageRoute} from "../../../route/router.tsx";
 
 interface Props {
   className?: string;
@@ -13,11 +14,16 @@ export const Header: React.FC<Props> = ({className}) => {
   console.log(typeof style.right);
 
   return (
-    <header className={cn(style.wrapper, className)}>
-      <h1 className={style.left}>
-        <Link to={'/'}>Pictogram</Link>
+    <header className={cn(style.header, className)}>
+      <h1 className={style.logo}>
+        <Link
+          className={style.logoLink}
+          to={mainPageRoute}
+        >Pictogram</Link>
       </h1>
-      <Navbar className={style.right} />
+      <div className={style.right}>
+        <UserBadge />
+      </div>
     </header>
   )
 }
